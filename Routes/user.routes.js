@@ -20,6 +20,11 @@ router
     .route('/update/:id')
     .patch(userController.updateUser);
 
+
+router
+    .route('/user/bulk-update')
+    .patch(userController.bulkUpdateUser);
+
 router
     .route('/delete/:id')
     .delete(userController.deleteUser);

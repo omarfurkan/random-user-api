@@ -88,6 +88,10 @@ module.exports.updateUser = (req, res) => {
 
 }
 
+module.exports.bulkUpdateUser = (req, res) => {
+
+}
+
 module.exports.deleteUser = (req, res) => {
     const { id } = req.params;
     const remaingUser = user.filter(u => u.id !== Number(id));
