@@ -6,11 +6,17 @@ const router = express.Router();
 
 router
     .route('/all')
-    .get(userController.getAllUser)
+    .get(userController.getAllUser);
 
 router
     .route('/random')
-    .get(userController.getRandomUser)
+    .get(userController.getRandomUser);
+
+router
+    .route('/save')
+    .post(userController.saveUser)
+
+
 
 module.exports = router;
 
