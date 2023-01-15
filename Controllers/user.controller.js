@@ -57,6 +57,10 @@ let user = [
     }
 ]
 
+module.exports.getRandomUser = (req, res, next) => {
+    res.send(user[Math.floor(Math.random() * user.length)])
+}
+
 
 
 module.exports.getAllUser = (req, res, next) => {

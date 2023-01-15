@@ -9,7 +9,7 @@ app.use(express.json())
 app.use(cors());
 
 
-app.use('/user/all', userRoutes);
+app.use('/user', userRoutes);
 
 
 
