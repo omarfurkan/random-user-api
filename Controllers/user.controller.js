@@ -60,6 +60,8 @@ let user = [
 
 
 module.exports.getAllUser = (req, res, next) => {
-    res.send(user)
+    const { limit } = req.query;
+    console.log(limit);
+    res.send(user.slice(0, limit))
 }
 
