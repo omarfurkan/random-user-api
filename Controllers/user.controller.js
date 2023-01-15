@@ -78,8 +78,7 @@ module.exports.saveUser = (req, res, next) => {
 module.exports.updateUser = (req, res) => {
     const { id } = req.params;
     const modifyUserInfo = user.find(u => u.id === Number(id))
-
-    modifyUserInfo.id = id;
+    modifyUserInfo.id = Number(id)
     modifyUserInfo.gender = req.body.gender;
     modifyUserInfo.name = req.body.name;
     modifyUserInfo.contact = req.body.contact;
@@ -87,6 +86,11 @@ module.exports.updateUser = (req, res) => {
     modifyUserInfo.photoUrl = req.body.photoUrl;
     res.send(user);
 
+}
 
+module.exports.deleteUser = (req, res) => {
+    const { id } = req.params;
+    const remaingUser = user.filter(u => u.id !== Number(id));
+    res.send(remaingUser)
 }
 

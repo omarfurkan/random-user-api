@@ -20,6 +20,10 @@ router
     .route('/update/:id')
     .patch(userController.updateUser);
 
+router
+    .route('/delete/:id')
+    .delete(userController.deleteUser);
+
 
 
 module.exports = router;
