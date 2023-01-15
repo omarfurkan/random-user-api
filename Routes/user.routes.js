@@ -14,7 +14,11 @@ router
 
 router
     .route('/save')
-    .post(userController.saveUser)
+    .post(userController.saveUser);
+
+router
+    .route('/update/:id')
+    .patch(userController.updateUser);
 
 
 

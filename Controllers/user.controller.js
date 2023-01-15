@@ -59,7 +59,7 @@ module.exports.getAllUser = (req, res, next) => {
     const { limit } = req.query;
     console.log(limit);
     res.send(user.slice(0, limit))
-}
+};
 
 module.exports.saveUser = (req, res, next) => {
     console.log(req.body);
@@ -72,6 +72,21 @@ module.exports.saveUser = (req, res, next) => {
         console.log('missing info')
         res.send('missing info');
     }
+
+};
+
+module.exports.updateUser = (req, res) => {
+    const { id } = req.params;
+    const modifyUserInfo = user.find(u => u.id === Number(id))
+
+    modifyUserInfo.id = id;
+    modifyUserInfo.gender = req.body.gender;
+    modifyUserInfo.name = req.body.name;
+    modifyUserInfo.contact = req.body.contact;
+    modifyUserInfo.address = req.body.address;
+    modifyUserInfo.photoUrl = req.body.photoUrl;
+    res.send(user);
+
 
 }
 
